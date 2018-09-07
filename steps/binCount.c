@@ -1,34 +1,9 @@
-struct tnode {
-char *word; 
-int count;
-struct tnode *left; 
-struct tnode *right; 
-}; 
-
-struct tnode *left;
-struct t {
-struct s *p;
-};
-
-struct s {
-struct t *q;
-};
-
 #include <stdio.h>
 #include<ctype.h>
 #include<string.h>
+#include "tree.h"
 
-#define MAXWORD 100
-
- /* pointer to t node, not node itself */
-
-struct tnode *addtree(struct tnode *, char *);
-void treeprint(struct tnode *);
-int getword(char *, int);
-
-/* actually counting words */
-
-int main()
+main()
 {
 
 	struct tnode *root; 
