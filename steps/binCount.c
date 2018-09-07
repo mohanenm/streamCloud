@@ -59,4 +59,17 @@ struct tnode *addtree(struct tnode *p, char *w)
 	 p->count++; 
 	else if (cond < 0)
 	 p->left = addtree(p->left, w); 
+	else 
+	 p->right = addtree(p->right, w); 
+	return p;
 }
+
+void treeprint(struct tnode *p)
+{
+	if (p != NULL) {
+	treeprint(p->left); 
+	printf("%4d %s\n", p->count, p->word); 
+	treeprint(p->right); 
+	}
+}
+
