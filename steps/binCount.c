@@ -15,12 +15,12 @@ struct tnode *right;
 struct tnode *left; /* pointer to t node, not node itself */
 
 struct t {
-struct s *p
-}
+struct s *p;
+};
 
 struct s {
-struct t *q
-}
+struct t *q;
+};
 
 struct tnode *addtree(struct tnode *, char *);
 void treeprint(struct tnode *);
