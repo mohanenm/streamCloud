@@ -35,9 +35,6 @@ void ungetch(int c)
 		buf[bufp++] = c; 
 }
 
-int getch(void);
-void ungetch(int c);
-
 struct tnode {
  char *word;
  int count;
@@ -116,13 +113,15 @@ int freqcmp(const void *a, const void *b)
 int getword(char *word, int lim)
 {
 
-	int c; char *w = word; 
+	int c, getch(void);
+	void ungetch(int);
+	char *w = word; 
 
 	while(isspace(c = getch())) 
 	;
 
-	if (c != EOF) *w++ = c; 
-
+	if (c != EOF)
+		 *w++ = c; 
 	if(!isalpha(c)) {
 	*w = '\0';
 	return c; 
@@ -130,8 +129,7 @@ int getword(char *word, int lim)
 
 	for ( ; --lim > 1; w++)
 	
-		if(isalnum(*w = getch())) {
-
+		if(!isalnum(*w = getch())) {
 			ungetch(*w); 
 			break; 
 	}
@@ -161,7 +159,7 @@ void ungetch(int c)
  
 */
 
-int main()
+ main()
 {
         
         struct tnode *root;
