@@ -1,20 +1,36 @@
 #include <stdio.h>
 #include <ctype.h>
-#include <string.h>
 /* #include "tree.h" */
 #include <stdlib.h>
+
 
 #define MAXWORD 100
 
 struct tnode {
- char *word; int count; struct *left; struct right; 
+ char *word;
+ int count;
+ struct tnode  *left;
+ struct tnode  *right; 
 }; 
+
+struct tnode *left; 
+
+struct t {
+
+struct s *p; 
+}; 
+
+struct s {
+
+struct t *q; 
+};
 
 int wordCount = 0; 
 struct tnode **tword; 
  
-struct tnode *addtree(dtuct tnode *p, char *w); 
+struct tnode *addtree(struct tnode *p, char *w); 
 void extract(struct tnode *p); 
+
 int freqcmp(const void *a, const void *b); 
 int getword(char *word, int lim); 
 
