@@ -166,7 +166,9 @@ void ungetch(int c)
         
         struct tnode *root;
         char word[MAXWORD];
-       /*  FILE *fp 
+      
+
+ /*  FILE *fp 
 	char* filename = "nietzsche.txt";
         fp = fopen(filename, "stream"); 
 	if(fp == NULL){
@@ -176,9 +178,10 @@ void ungetch(int c)
 	
         stream = word;  
 */
+
 	int i; 
         root = NULL; 
-        while (getword(word, MAXWORD) != EOF)
+        while (getword(word, MAXWORD) != -1)
                 if (isalpha(word[0]))
                         root = addtree(root, word);
 
@@ -192,9 +195,9 @@ void ungetch(int c)
         
         /* actually print these after having extract all words into tword */
         
-        for (i = 0; i < 1000; i++)
-                
-                printf("%s: %d", tword[i]->word, tword[i]->count);
+	
+        for (i = 0; i < wordCount; i++) 
+                printf("%s: %d ", tword[i]->word, tword[i]->count);
         
         return 0;
 }
