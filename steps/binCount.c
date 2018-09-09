@@ -3,6 +3,8 @@
 /*#include "tree.h" */
 #include <stdlib.h>
 #include <string.h>
+#include <sys/types.h>
+#include <unistd.h>
 
 
 #define MAXWORD 100
@@ -159,13 +161,22 @@ void ungetch(int c)
  
 */
 
- main()
+ main(int argc, char* argv [])
 {
         
         struct tnode *root;
         char word[MAXWORD];
-        int i;
-        
+       /*  FILE *fp 
+	char* filename = "nietzsche.txt";
+        fp = fopen(filename, "stream"); 
+	if(fp == NULL){
+		printf("file path null\n");
+		return 1;
+	}
+	
+        stream = word;  
+*/
+	int i; 
         root = NULL; 
         while (getword(word, MAXWORD) != EOF)
                 if (isalpha(word[0]))
@@ -181,9 +192,9 @@ void ungetch(int c)
         
         /* actually print these after having extract all words into tword */
         
-        for (i = 0; i < wordCount; i++)
+        for (i = 0; i < 1000; i++)
                 
-                printf("%4d:%s\n", tword[i]->count, tword[i]->word);
+                printf("%s: %d", tword[i]->word, tword[i]->count);
         
         return 0;
 }
