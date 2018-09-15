@@ -1,0 +1,25 @@
+[core]
+        vim
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+        ignorecase = true
+        precomposeunicode = true
+[branch "master"]
+        remote = https://enmohan@bitbucket.org/enmohan/cs310f18enm.git
+        merge = refs/heads/master
+[alias]
+        s= status
+        a= add .
+        b= branch
+        c= commit -m
+        p= push https://github.com/mohanenm/streamCloud
+        pb = push
+[include]
+        path = ../.gitconfig
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
