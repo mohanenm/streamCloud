@@ -1,14 +1,10 @@
-COMMON_OBJS = word_main.o word_entry.o
-
-CC=gcc
-
-CFLAGS=-g
-
-EXES=word_main
-
-all: $(EXES)
-
-word_main: $(COMMON_OBJS)
-
+#make file - this is a comment section..........run  cat -e -t -v {Makefile} when missing sep
+	
+CC=gcc  #compiler
+TARGET= /src/hw1/steps/bincount
+	
+all:
+	$(CC) bincount.c  -o $(TARGET)
+	
 clean:
-	rm -f $(EXES) *.o
+	rm $(TARGET)
